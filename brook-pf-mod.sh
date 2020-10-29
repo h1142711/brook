@@ -136,7 +136,8 @@ check_domain_ip_change(){
 Download_brook(){
     [[ ! -e ${file} ]] && mkdir ${file}
     cd ${file}
-    if [[ ${bit} == "x86_64" ]]; then
+       if [[ ${bit} == "x86_64" ]]; then
+        wget --no-check-certificate -N "https://github.com/txthinking/brook/releases/download/${brook_new_ver}/brook"
         wget --no-check-certificate -N "https://github.com/txthinking/brook/releases/download/${brook_new_ver}/brook_linux_386"
         mv brook_linux_386 brook
     else
